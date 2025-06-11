@@ -1,0 +1,29 @@
+<section class="contact-section">
+  <div class="contact-background"></div>
+  <div class="contact-content">
+    <h2>Contato</h2>
+    <div class="contact-cards">
+      
+      <a [href]="data.linkedin" target="_blank" class="contact-card linkedin">
+        <div class="card-icon">
+          <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
+        </div>
+        <div class="card-text">
+          <h3>LinkedIn</h3>
+          <span>/felipe-louzeiro</span>
+        </div>
+      </a>
+      
+      <div class="contact-card email" (click)="copyEmail()">
+        <div class="card-icon">
+          <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
+        </div>
+        <div class="card-text">
+          <h3>Email</h3>
+          <span>{{ emailText }}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section> 

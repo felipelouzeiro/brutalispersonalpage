@@ -1,0 +1,14 @@
+<section class="skills" *ngIf="data">
+  <h2>{{ data.title }}</h2>
+  <div class="skill-mosaic">
+    <div *ngFor="let skill of data.list" 
+         class="skill-tile"
+         [ngClass]="getTileSize(skill.name)"
+         [ngStyle]="getRandomAnimationValues()">
+      <div class="skill-tile-inner">
+        <fa-icon [icon]="getIcon(skill.icon)" class="skill-icon"></fa-icon>
+        <span class="skill-name">{{ skill.name }}</span>
+      </div>
+    </div>
+  </div>
+</section> 

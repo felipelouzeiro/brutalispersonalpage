@@ -1,0 +1,13 @@
+<div class="container" *ngIf="data">
+  <app-about [data]="data.about"></app-about>
+  <main>
+    <app-experiences [data]="data.experiences"></app-experiences>
+    <app-skills [data]="data.skills"></app-skills>
+    <app-projects [data]="data.projects">projetos aquiii</app-projects>
+  </main>
+  <app-footer 
+    [data]="data.contacts"
+    [isBrutalistTheme]="isBrutalistTheme"
+    (themeToggle)="toggleTheme()">
+  </app-footer>
+</div> 

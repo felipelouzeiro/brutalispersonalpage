@@ -1,0 +1,133 @@
+.experiences {
+  padding: 2rem 1rem;
+  position: relative;
+  margin-bottom: 2rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: var(--border-width);
+      background-color: var(--border-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: calc(var(--border-width) / -2);
+    }
+  }
+
+  .timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+
+    &:nth-child(odd) {
+      left: 0;
+      padding-right: 30px;
+    }
+    &:nth-child(even) {
+      left: 50%;
+      padding-left: 30px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--bg-main);
+      border: var(--border-width) solid var(--primary-color);
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    &:nth-child(odd)::after {
+      right: -10px;
+    }
+    &:nth-child(even)::after {
+      left: -10px;
+    }
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+    transition: var(--transition-cubic);
+
+    &:hover {
+      box-shadow: calc(var(--shadow-offset) + 4px) calc(var(--shadow-offset) + 4px) 0 var(--shadow-color);
+      transform: translateY(-5px);
+    }
+
+    h3 { font-size: 1.8rem; color: var(--black-pure); }
+    h4 { font-size: 1.2rem; margin: 0.25rem 0; font-family: 'Fira Sans'; font-weight: 600; color: var(--text-color); }
+    .period { display: block; font-style: italic; font-size: 1rem; margin-bottom: 0.75rem; }
+    p { font-size: 1rem; line-height: 1.5; }
+  }
+
+  // Layout responsivo para a timeline
+  @media (max-width: 768px) {
+    .timeline::after {
+      left: 20px;
+      bottom: 0;
+    }
+
+    .timeline-item {
+      width: 100%;
+      padding-left: 60px;
+      padding-right: 15px;
+
+      &:nth-child(odd), &:nth-child(even) {
+        left: 0;
+        padding-right: 15px;
+        padding-left: 60px;
+      }
+      
+      &::after {
+        left: 10px;
+      }
+    }
+  }
+
+  .experience-list {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+    box-shadow: 5px 5px 0 var(--shadow-color);
+    background-color: var(--secondary-color);
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+  }
+} 

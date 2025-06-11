@@ -1,0 +1,43 @@
+<section class="projects" *ngIf="data && data.length > 0">
+  <h2 class="section-title">Projetos</h2>
+  <div class="project-list">
+    <!-- O loop agora gera o novo componente de card -->
+    <div *ngFor="let project of data" class="project-card-wrapper">
+      <div class="project-card">
+        <!-- Cabeçalho do Card -->
+        <header class="card-header">
+          <div class="header-text">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <span *ngIf="project.association" class="project-association">{{ project.association }}</span>
+          </div>
+          <!-- Usaremos um ícone de estrela como na referência, podemos estilizar via CSS -->
+          <div class="header-icon-placeholder"></div>
+        </header>
+
+        <!-- Corpo do Card -->
+        <main class="card-body">
+          <p class="project-description">{{ project.description }}</p>
+          
+          <div class="project-technologies">
+            <div *ngFor="let tech of project.technologies.slice(0, 4)" class="tech-item">
+              <!-- Aqui vamos mapear para os ícones corretos depois -->
+              <fa-icon [icon]="getTechIcon(tech)"></fa-icon>
+              <span>{{ tech }}</span>
+            </div>
+          </div>
+        </main>
+
+        <!-- Rodapé do Card -->
+        <footer class="card-footer">
+          <a *ngIf="project.demoUrl" [href]="project.demoUrl" target="_blank" class="btn-primary">
+            Ver Projeto
+            <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+          </a>
+          <a *ngIf="project.repoUrl" [href]="project.repoUrl" target="_blank" class="btn-icon" title="Acessar repositório">
+            <fa-icon [icon]="['fab', 'github']"></fa-icon>
+          </a>
+        </footer>
+      </div>
+    </div>
+  </div>
+</section> 

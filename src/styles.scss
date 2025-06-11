@@ -1,1 +1,145 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Syne:wght@800&display=swap');
+
+:root {
+  // =================================================================
+  // MANIFESTO DO TEMA (TEMA CLARO - PADRÃO)
+  // =================================================================
+  
+  // 1. Paleta Crua
+  --black-base: #181F1C;
+  --white-base: #FFFFF0;
+  --support1: #736CED;   // Roxo
+  --support2: #ff1a7a;   // Rosa
+  --support3: #17b890;   // Verde-água
+  --support4: #ffc400;   // Amarelo
+  --support5: #333333;   // Cinza Texto
+
+  // 2. Cores Globais e Semânticas
+  --bg-main: var(--white-base);
+  --bg-card: var(--white-base);
+  --bg-grid-line: rgba(0, 0, 0, 0.05);
+  --text-color: var(--support5);
+  --text-color-light: var(--white-base);
+  --border-color: var(--black-base);
+  --shadow-color: var(--black-base);
+  --primary-color: var(--support1);
+  --secondary-color: var(--support2);
+  --accent-color: var(--support3);
+  
+  // 3. Cores de Componentes Específicos
+  // -- Cards de Projeto
+  --project-card-header-bg: var(--primary-color);
+  --project-card-header-text: var(--white-base);
+  --project-card-tech-icon-bg: var(--support1);
+  --project-card-tech-icon-text: var(--white-base);
+  --project-card-button-bg: var(--accent-color);
+  --project-card-button-text: var(--black-base);
+  --project-card-icon-link-bg: transparent;
+  --project-card-icon-link-text: var(--text-color);
+  --project-card-icon-link-hover-bg: var(--support2);
+  --project-card-icon-link-hover-text: var(--white-base);
+
+  // -- Botão de Troca de Tema
+  --theme-toggle-bg: var(--support4); // Amarelo
+  --theme-toggle-text: var(--black-base);
+  --theme-toggle-icon-bg: var(--support2); // Rosa
+  --theme-toggle-icon-text: var(--black-base);
+  --theme-toggle-hover-bg: var(--support2); // Rosa
+  --theme-toggle-hover-text: var(--black-base);
+  --theme-toggle-hover-icon-bg: var(--support4); // Amarelo
+  --theme-toggle-hover-icon-text: var(--black-base);
+
+  // 4. Efeitos
+  --border-width: 3px;
+  --shadow-offset: 6px;
+  --shadow-xs: 3px;
+  --transition: all 0.2s ease-out;
+}
+
+body.theme-brutalist {
+  // =================================================================
+  // MANIFESTO DO TEMA (TEMA ESCURO - BRUTALISTA)
+  // =================================================================
+  
+  // 1. Cores Globais e Semânticas (Invertidas)
+  --bg-main: var(--black-base);
+  --bg-card: var(--black-base);
+  --bg-grid-line: rgba(255, 255, 255, 0.1);
+  --text-color: var(--white-base);
+  --border-color: var(--white-base);
+  --shadow-color: var(--white-base);
+  --primary-color: var(--support1);
+  --secondary-color: var(--support2);
+  --accent-color: var(--support3);
+  
+  // 2. Cores de Componentes (Invertidas e com Contraste)
+  // -- Cards de Projeto
+  --project-card-header-bg: var(--white-base);
+  --project-card-header-text: var(--black-base);
+  --project-card-tech-icon-bg: var(--white-base);
+  --project-card-tech-icon-text: var(--black-base);
+  --project-card-button-bg: var(--white-base);
+  --project-card-button-text: var(--black-base);
+  --project-card-icon-link-bg: var(--white-base);
+  --project-card-icon-link-text: var(--black-base);
+  --project-card-icon-link-hover-bg: var(--support2);
+  --project-card-icon-link-hover-text: var(--white-base);
+
+  // -- Botão de Troca de Tema
+  --theme-toggle-bg: var(--white-base);
+  --theme-toggle-text: var(--black-base);
+  --theme-toggle-icon-bg: var(--black-base);
+  --theme-toggle-icon-text: var(--white-base);
+  --theme-toggle-hover-bg: var(--black-base);
+  --theme-toggle-hover-text: var(--white-base);
+  --theme-toggle-hover-icon-bg: var(--white-base);
+  --theme-toggle-hover-icon-text: var(--black-base);
+
+  // Regra global para títulos
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--white-base);
+  }
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-color);
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+// O filtro foi removido, a mágica agora está nas variáveis
+// body.theme-brutalist app-root { ... }
+
+// Tipografia Base
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--black-base);
+  margin: 0;
+  font-weight: normal;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; color: var(--primary-color); }
+p, span, div { font-family: 'Fira Sans', sans-serif; font-size: 1.1rem; }
+a {
+  font-family: 'Fira Sans', sans-serif;
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+button {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--black-base);
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}

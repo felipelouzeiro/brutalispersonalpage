@@ -1,0 +1,29 @@
+<section class="home-intro" *ngIf="data">
+  <div class="intro-block greeting">
+    <span>Olá, eu sou</span>
+    <h1>Felipe Louzeiro</h1>
+  </div>
+  
+  <div class="intro-block role">
+    <h2 class="dynamic-title">{{ currentTitle }}</h2>
+  </div>
+
+  <div class="intro-block tagline">
+    <pre class="pre"><code>-&nbsp;</code><code class="cmd" [attr.data-text]="tagline"></code></pre>
+  </div>
+</section>
+
+<header class="about-section" *ngIf="data">
+  <div class="about-replacement">
+    <button class="theme-toggle-button" (click)="toggleTheme()">
+      <span class="button-text">Mudar Tema</span>
+      <span class="button-icon">
+        <fa-icon [icon]="['fas', 'arrow-right']"></fa-icon>
+      </span>
+    </button>
+  </div>
+  <div class="about-text">
+    <h1>{{ data.title }}</h1>
+    <p>{{ data.description }}</p>
+  </div>
+</header> 
